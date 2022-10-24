@@ -6,7 +6,7 @@
 <h1>Question number {{question + 1}}</h1>
 
 <form method="POST" action="/answers">
-    <p>{{survey.questions[0].question}}</p>
+    <p>{{survey.questions[question].question}}</p>
 
     <label for="yes">{{survey.questions[question].choices[0]}}</label>
     <input type="radio" name="answer" id="yes">
