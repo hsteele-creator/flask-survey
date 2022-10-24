@@ -3,5 +3,9 @@
 {% block title %}Survey{% endblock %}
 
 {% block content %}
-<p>Survey Page</p>
+<h1>{{survey.title}}</h1>
+
+<p>{{survey.instructions}}</p>
+
+<button><a href="/question/{{question + 1}}">Next Question</a></button>
 {% endblock %}
