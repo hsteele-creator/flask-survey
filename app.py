@@ -4,6 +4,6 @@ app = Flask(__name__)
 # storing customer responses
 responses = []
 
-app.route("/")
+@app.route("/")
 def survey():
     return render_template("survey.html")
