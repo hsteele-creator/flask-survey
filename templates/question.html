@@ -3,15 +3,15 @@
 {% block title %} question {% endblock %}
 
 {% block content %}
-<h1>Question number {{question + 1}}</h1>
+<h1>Question number {{2}}</h1>
 
 <form method="POST" action="/answers">
-    <p>{{survey.questions[question].question}}</p>
+    <p>{{survey.questions[2].question}}</p>
 
-    <label for="yes">{{survey.questions[question].choices[0]}}</label>
+    <label for="yes">{{survey.questions[2].choices[0]}}</label>
     <input type="radio" name="answer" id="yes">
 
-    <label for="no">{{survey.questions[question].choices[1]}}</label>
+    <label for="no">{{survey.questions[2].choices[1]}}</label>
     <input type="radio" name="answer" id="no">
 
     <input type="submit" id="submit" value="Next Question">
