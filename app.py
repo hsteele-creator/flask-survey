@@ -13,16 +13,20 @@ responses = []
 def survey():
     return render_template("survey.html", survey=satisfaction_survey)
 
-@app.route("/question/<question>")
+@app.route("/question/<int:question>")
 def next_question(question):
-    return render_template("question.html", survey=satisfaction_survey, page=question)
-
-
-# @app.route("/answers", methods=["POST"])
-# def answer():
-#     answer = request.form["answer"]
-#     responses.append(answer)
     
-#     return redirect(f"/question")
+    if question < 4:      
+        return render_template("question.html", survey=satisfaction_survey, page=question)
+    else:
+        return render_template("thank-you.html")
+
+
+@app.route("/answers", methods=["POST"])
+def answer():
+    answer = request.form["answer"]
+    responses.append(answer)
+    
+    return redirect(f"/question/{len(responses)}")
     
     
